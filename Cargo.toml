@@ -14,6 +14,10 @@ byteorder = { version = "1.4.3", default-features = true }
 encoding = "0.2.33"
 enum-primitive-derive = "0.1.2"
 env_logger = "0.9.0"
+half = "2.3.1"
 log = "0.4.17"
 snafu = "0.7.1"
 tokio = { version = "1", features = ["full"]  }
+
+[dev-dependencies]
+clap = { version = "4.3.19", features = ["derive"] }
