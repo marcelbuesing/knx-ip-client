@@ -1,0 +1,19 @@
+[package]
+name = "knx-ip-tokio"
+version = "0.1.4"
+edition = "2021"
+authors = ["Andrea Niklaus <andrea.niklaus@enc.ch>"]
+license = "MIT"
+description = "KNXIP Client library"
+repository = "https://github.com/AndreaNiklaus/knx-ip-client"
+readme = "README.md"
+
+[dependencies]
+env_logger = "0.9.0"
+knx-core =  { path = "../knx-core" }
+log = "0.4.17"
+snafu = "0.7.1"
+tokio = { version = "1", features = ["full"]  }
+
+[dev-dependencies]
+clap = { version = "4.3.19", features = ["derive"] }

@@ -1,23 +1,6 @@
-[package]
-name = "knx-ip-client"
-version = "0.1.4"
-edition = "2021"
-authors = ["Andrea Niklaus <andrea.niklaus@enc.ch>"]
-license = "MIT"
-description = "KNXIP Client library"
-repository = "https://github.com/AndreaNiklaus/knx-ip-client"
-readme = "README.md"
+[workspace]
 
-[dependencies]
-bitflags = "2.3.3"
-byteorder = { version = "1.4.3", default-features = true }
-encoding = "0.2.33"
-enum-primitive-derive = "0.1.2"
-env_logger = "0.9.0"
-half = "2.3.1"
-log = "0.4.17"
-snafu = "0.7.1"
-tokio = { version = "1", features = ["full"]  }
-
-[dev-dependencies]
-clap = { version = "4.3.19", features = ["derive"] }
+members = [
+    "knx-core",
+    "knx-ip-tokio",
+]

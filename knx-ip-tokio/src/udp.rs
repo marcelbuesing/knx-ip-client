@@ -1,17 +1,7 @@
-use crate::packets::core::{SearchRequest, SearchResponse, DISCOVERY_ENDPOINT_PORT, SYSTEM_MULTICAST_ADDRESS};
-use crate::packets::tunneling::FeatureSet;
-use std::sync::Arc;
-use std::time::Duration;
-use std::{io::Cursor, net::SocketAddr};
-use tokio::select;
-
-use log::{debug, info, warn};
-use snafu::{whatever, Whatever};
-use tokio::net::{ToSocketAddrs, UdpSocket};
-use tokio::sync::{mpsc, Mutex};
-
-use crate::packets::tunneling::KnxIpFeature;
-use crate::packets::{
+use knx_core::packets::core::{SearchRequest, SearchResponse, DISCOVERY_ENDPOINT_PORT, SYSTEM_MULTICAST_ADDRESS};
+use knx_core::packets::tunneling::FeatureSet;
+use knx_core::packets::tunneling::KnxIpFeature;
+use knx_core::packets::{
     addresses::KnxAddress,
     apdu::APDU,
     core::{ConnectionRequest, ConnectionResponse, ConnectionstateRequest, ConnectionstateResponse, DisconnectRequest, DisconnectResponse, HPAI},
@@ -19,6 +9,14 @@ use crate::packets::{
     tpdu::TPDU,
     tunneling::{TunnelingAck, TunnelingRequest},
 };
+use log::{debug, info, warn};
+use snafu::{whatever, Whatever};
+use std::sync::Arc;
+use std::time::Duration;
+use std::{io::Cursor, net::SocketAddr};
+use tokio::net::{ToSocketAddrs, UdpSocket};
+use tokio::select;
+use tokio::sync::{mpsc, Mutex};
 
 pub type TransportResult<T> = Result<T, Whatever>;
 

@@ -1,0 +1,15 @@
+[package]
+name = "knx-core"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+bitflags = "2.3.3"
+byteorder = { version = "1.4.3", default-features = true }
+encoding = "0.2.33"
+enum-primitive-derive = "0.1.2"
+half = "2.3.1"
+log = "0.4.17"
+snafu = "0.7.1"
